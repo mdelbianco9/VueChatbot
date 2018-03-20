@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Chatbot</title>
+
+    <!-- JQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+<!-- CSS  -->
+    <link href="src/app.css" rel="stylesheet">
+
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+
+  </head>
+  <body>
+
+  	<div id="app">
+
+      <div class="container">
+                    <!-- Main container for page -->
+            <div class="row justify-content-md-center">
+                  <!-- Chatbot himself/herself -->
+              <div class="col col-md-8">
+                <!-- Input area -->
+                  <div class="form-group">
+                    <input 
+                    type="text" 
+                    placeholder="whats up?" 
+                    v-model="message" 
+                    v-on:keyup.enter="addTask" 
+                    class="col-md-12 form-control input-lg"
+                    >
+                  </div>
+                <!-- Conversation area -->
+                <div id="results"
+                class="col-md-10 justify-content-md-center content" >
+                  <ul>
+                      <li v-for="task in list" class="col-md-8">
+                        <label>{{ task }}</label>
+                        <p id="demo"></p>
+                      </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+      </div>
+
+	   </div>
+
+
+
+
+  	<script src="src/app.js"></script>
+  	<!-- <link rel="stylesheet" href="src/app.css"></link> -->
+
+  </body>
+</html>

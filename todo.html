@@ -1,0 +1,72 @@
+<div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col col-md-6">
+            <div class="card">
+
+               <!-- This is my form. Input and Button -->
+              <form class="card-block m-0" @submit.prevent="add(todo)">
+
+                <div class="input-group">
+                  <input type="text" v-model="todo" placeholder="todos" class="form-control">
+
+                  <span class="input-group-btn"></span>
+
+                  <button class="btn btn-primary" type="submit" :disabled="!todoIsValid">
+                    Add
+                  </button>
+                </div>
+
+              </form>
+
+                <!-- List of inputs -->
+              <ul class="list-group list-group-flush">
+                <!-- The v-for pulls from the array and displays on the app -->
+                
+                <li class="list-group-item d-block" v-for="todo in todos">
+
+                <div v-if="!todo.isEdited">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" v-model="todo.finished">
+                    <!-- adds the class to cross out a todo AKA binds & toggles a class -->
+                    <span :class="{'todo-finished': todo.finished}">
+                      {{ todo.content }}
+                    </span>
+                  </label>
+
+                  <div class="btn-group float-right">
+                    <button class="btn btn-sm btn-primary" v-if="!isBeingEdited" @click="edit(todo)">
+                      <i class="fa fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" @click="remove(todo)">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </div>
+                  </div>
+
+                  <form v-if="todo.isEdited" @submit.prevent="update(todo)">
+                    <div class="input-group">
+                      <!-- the v-model here allows the text to remain in the edit field when clicked on to be edited -->
+                      <input type="text" class="form-control" v-model="editTodo" placeholder="Edit">
+                      <span class="input-group-btn">
+                        <button class="btn btn-sm btn-primary" type="submit" :disabled="!editTodoIsValid">
+                          <i class="fa fa-save"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" type="submit" @click="remove(todo)">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </span>
+
+                    
+                  </form>
+                </div>
+
+                </li>
+                
+              </ul>
+              
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>

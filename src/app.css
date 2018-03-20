@@ -1,0 +1,44 @@
+
+body {
+	padding-top: 75px;
+}
+
+.content {
+	height: 500px;
+}
+
+input {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding: 2rem;
+}
+
+
+.col {
+	border: 1px solid cadetblue;
+	background-color: #e6ffff;
+	border-radius: 20px;
+}
+
+#results {
+	overflow: scroll;
+}
+
+li {
+	border: 1px solid grey;
+	background-color: rgba(0, 204, 204, .8);
+	list-style-type: none;
+	border-radius: 10px;
+	padding: .5rem;
+	font-size: 25px;
+	margin-bottom: .5rem;
+	text-align: left;
+}
+
+label {
+	color: white;
+}
+
+
+
+
