@@ -1,24 +1,33 @@
+
+const url = "http://dummy.restapiexample.com/api/v1/employees";
+
 var app = new Vue({
   el: '#app',
   data: {
     message: "",
-    list: []
+    list: [],
+    results: [],
   },
+  mounted() {
+
+          axios.get(url).then(response => {this.results = response.data})
+
+        },
   methods: {
     addTask: function() {
       var task = this.message;
       this.list.push(task);
-      this.message = ""
-      var xhr = new XMLHttpRequest();
+      this.message = "";
 
-      xhr.onload = function() {
+      // BTC Stuff
+       var btc = this.results;
+       this.list.push(btc);
+      console.log(btc);
 
-      }
-      xhr.open('GET', 'https://jsonplaceholder.typicode.com/', true);
-      xhr.send(null);
+
 
     }
-  }
+  },
 })
 
 /* We are building a function to take the TEXT from the Input 

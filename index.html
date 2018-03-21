@@ -28,6 +28,7 @@
 
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   </head>
   <body>
@@ -49,13 +50,14 @@
                     class="col-md-12 form-control input-lg"
                     >
                   </div>
+
                 <!-- Conversation area -->
                 <div id="results"
                 class="col-md-10 justify-content-md-center content" >
                   <ul>
                       <li v-for="task in list" class="col-md-8">
                         <label>{{ task }}</label>
-                        <p id="demo"></p>
+                        
                       </li>
                   </ul>
                 </div>
