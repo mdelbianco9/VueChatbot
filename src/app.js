@@ -1,5 +1,5 @@
 
-const url = "http://dummy.restapiexample.com/api/v1/employees";
+const url = "http://www.omdbapi.com/?i=tt3896198&apikey=af4ba98b";
 
 var app = new Vue({
   el: '#app',
@@ -20,7 +20,7 @@ var app = new Vue({
       this.message = "";
 
       // BTC Stuff
-       var btc = this.results;
+       var btc = this.results.Title;
        this.list.push(btc);
       console.log(btc);
 
